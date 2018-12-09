@@ -1,0 +1,63 @@
+{
+  "name": "token-sale-dapp",
+  "version": "1.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Identiform/token_sale_starter.git"
+  },
+  "author": "Tadas Talaikis <info@talaikis.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Identiform/token_sale_starter/issues"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "compression": "^1.7.2",
+    "cross-env": "^5.1.4",
+    "crypto": "^1.0.1",
+    "express": "^4.16.3",
+    "express-history-api-fallback": "^2.2.1",
+    "file-loader": "^1.1.11",
+    "grommet": "^1.10.1",
+    "grommet-css": "^1.6.0",
+    "lodash": "^4.17.10",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-ga": "^2.5.0",
+    "react-helmet": "^5.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
+    "react-scripts": "1.1.4",
+    "react-spinners": "^0.3.2",
+    "react-validation": "^3.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0",
+    "truffle": "^4.1.7",
+    "truffle-contract": "^3.0.5",
+    "web3": "^1.0.0-beta.34",
+    "web3-utils": "^1.0.0-beta.34"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "analyze": "source-map-explorer build/static/js/main.*",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --record",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.7.0",
+    "css-loader": "^0.28.11",
+    "less": "^3.0.2",
+    "cypress": "^2.1.0",
+    "less-loader": "^4.1.0",
+    "less-vars-to-js": "^1.2.1",
+    "react-testing-library": "^2.3.0",
+    "source-map-explorer": "^1.5.0",
+    "style-loader": "^0.21.0"
+  }
+}
