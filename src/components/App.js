@@ -46,6 +46,13 @@ class dApp extends PureComponent {
       this.props.fetchAccount(this.props.web3)
       this.props.fetchGasPrice(this.props.web3)
     }, 2000)
+    if (process.env.NODE_ENV === 'production') {
+      if (!window.GA_INITIALIZED) {
+        this.initGA()
+        window.GA_INITIALIZED = true
+      }
+      this.logPageView()
+    }
   }
 
   componentWillReceiveProps = (nextProps) => {
@@ -65,15 +72,22 @@ class dApp extends PureComponent {
     }
   }
 
-  pageviewTracking = () => {
-    ReactGA.pageview(window.location.pathName)
+  initGA () {
+    ReactGA.initialize(process.env.GA)
+    // console.log('Initialized')
+  }
+
+  logPageView () {
+    ReactGA.set({ page: window.location.pathname })
+    ReactGA.pageview(window.location.pathname)
+    // console.log(`Logged: ${window.location.pathname}`)
   }
 
   render() {
     return (
       <Wrapper>
         <div>
-          <BrowserRouter onUpdate={this.pageviewTracking} forceRefresh={!supportsHistory}>
+          <BrowserRouter forceRefresh={!supportsHistory}>
             <div>
               <Container>
                 <Status

@@ -15,9 +15,7 @@
     "axios": "^0.18.0",
     "compression": "^1.7.3",
     "cross-env": "^5.2.0",
-    "crypto": "^1.0.1",
     "express": "^4.16.4",
-    "express-history-api-fallback": "^2.2.1",
     "file-loader": "^1.1.11",
     "grommet": "^1.13.0",
     "grommet-css": "^1.6.0",
@@ -25,7 +23,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-ga": "^2.5.6",
+    "react-ga": "^2.6.0",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
@@ -37,8 +35,7 @@
     "redux-thunk": "^2.3.0",
     "truffle": "^4.1.15",
     "truffle-contract": "^3.0.7",
-    "web3": "^1.0.0-beta.34",
-    "web3-utils": "^1.0.0-beta.34"
+    "web3": "^1.2.6"
   },
   "scripts": {
     "start": "react-scripts start",

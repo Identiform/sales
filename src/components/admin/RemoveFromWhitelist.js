@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import web3utils from 'web3-utils'
 
 import Async from 'components/Async'
 import env from 'env'
@@ -52,7 +51,7 @@ class RemoveFromWhitelist extends Component {
   }
 
   getWhitelistStatus = () => {
-    if (web3utils.isAddress(this.state.toWhitelist)) {
+    if (this.props.web3.utils.isAddress(this.state.toWhitelist)) {
       this.props.Token.deployed().then((token) => {
         token.getWhitelistStatus(this.state.toWhitelist, { from: this.props.account }).then((res) => {
           this.setState({
@@ -112,7 +111,7 @@ class RemoveFromWhitelist extends Component {
     event.preventDefault()
 
     this.props.Token.deployed().then(async (token) => {
-      if (web3utils.isAddress(this.state.toWhitelist)) {
+      if (this.props.web3.utils.isAddress(this.state.toWhitelist)) {
         const _gas = await token.removeFromWhitelist.estimateGas(this.state.toWhitelist)
         token.removeFromWhitelist(this.state.toWhitelist, {
           from: this.props.account,

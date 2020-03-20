@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import Web3Utils from 'web3-utils'
 
 import Async from 'components/Async'
 import Meta from 'components/Meta'
@@ -91,7 +90,7 @@ class TransferTokens extends PureComponent {
     this.setState({ loading: true })
 
     this.props.Token.deployed().then(async (crowdsale) => {
-      if (this.state.amountTokens > 0 && Web3Utils.isAddress(this.state.to)) {
+      if (this.state.amountTokens > 0 && this.props.web3.utils.isAddress(this.state.to)) {
         const _gas = await crowdsale.transfer.estimateGas(this.state.to, this.state.amountTokens * 10 ** this.state.decimals, { from: this.props.account })
         crowdsale.transfer(this.state.to, this.state.amountTokens * 10 ** this.state.decimals, {
           from: this.props.account,

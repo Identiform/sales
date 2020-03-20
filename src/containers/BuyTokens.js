@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import Web3Utils from 'web3-utils'
 
 import Async from 'components/Async'
 import Meta from 'components/Meta'
@@ -80,7 +79,7 @@ class BuyIcoTokens extends PureComponent {
     event.preventDefault()
 
     this.props.Token.deployed().then(async (crowdsale) => {
-      if (this.state.amountEth > env.MINIMUM_CONTRIBUTION && Web3Utils.isAddress(this.props.account)) {
+      if (this.state.amountEth > env.MINIMUM_CONTRIBUTION && this.props.web3.utils.isAddress(this.props.account)) {
         const _gas = await this.props.web3.web3.eth.estimateGas({
           from: this.props.account,
           to: crowdsale.address,
