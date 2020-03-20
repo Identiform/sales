@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 
-import Async from 'components/Async'
-import env from 'env'
-const Title = Async(() => import('components/template/Title'))
-const Ls = Async(() => import('components/template/Ls'))
+import Async from '../Async'
+import env from '../../env'
+const Title = Async(() => import('../template/Title'))
+const Ls = Async(() => import('../template/Ls'))
 
 class Balance extends PureComponent {
   constructor(props) {

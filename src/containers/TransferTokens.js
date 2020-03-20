@@ -1,15 +1,15 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 
-import Async from 'components/Async'
-import Meta from 'components/Meta'
-import env from 'env'
-const Submit = Async(() => import('components/template/Submit'))
-const Popup = Async(() => import('components/template/Popup'))
-const Input = Async(() => import('components/template/Input'))
-const Title = Async(() => import('components/template/Title'))
-const Lead = Async(() => import('components/template/Lead'))
-const Container = Async(() => import('components/template/Container'))
+import Async from '../components/Async'
+import Meta from '../components/Meta'
+import env from '../env'
+const Submit = Async(() => import('../components/template/Submit'))
+const Popup = Async(() => import('../components/template/Popup'))
+const Input = Async(() => import('../components/template/Input'))
+const Title = Async(() => import('../components/template/Title'))
+const Lead = Async(() => import('../components/template/Lead'))
+const Container = Async(() => import('../components/template/Container'))
 
 class TransferTokens extends PureComponent {
   constructor(props) {

@@ -1,4 +1,4 @@
-import { icoStates } from 'utils/data'
+import { icoStates } from './data'
 
 export async function icoMap(res) {
   let label

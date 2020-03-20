@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Async from 'components/Async'
-const Title = Async(() => import('components/template/Title'))
-const Ls = Async(() => import('components/template/Ls'))
+import Async from '../Async'
+const Title = Async(() => import('../template/Title'))
+const Ls = Async(() => import('../template/Ls'))
 
 const Address = (props) => (
   <div>

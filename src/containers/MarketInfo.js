@@ -1,15 +1,15 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 
-import Async from 'components/Async'
-import Meta from 'components/Meta'
-import env from 'env'
-import { icoMap } from 'utils/maps'
-const RecentTransactions = Async(() => import('components/events/RecentTransactions'))
-const Title = Async(() => import('components/template/Title'))
-const Lead = Async(() => import('components/template/Lead'))
-const Container = Async(() => import('components/template/Container'))
-const Ls = Async(() => import('components/template/Ls'))
+import Async from '../components/Async'
+import Meta from '../components/Meta'
+import env from '../env'
+import { icoMap } from '../utils/maps'
+const RecentTransactions = Async(() => import('../components/events/RecentTransactions'))
+const Title = Async(() => import('../components/template/Title'))
+const Lead = Async(() => import('../components/template/Lead'))
+const Container = Async(() => import('../components/template/Container'))
+const Ls = Async(() => import('../components/template/Ls'))
 
 class CoinStats extends PureComponent {
   constructor(props) {

@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import Async from 'components/Async'
-import env from 'env'
-const Submit = Async(() => import('components/template/Submit'))
-const Popup = Async(() => import('components/template/Popup'))
-const Input = Async(() => import('components/template/Input'))
-const Title = Async(() => import('components/template/Title'))
-const Lead = Async(() => import('components/template/Lead'))
-const Container = Async(() => import('components/template/Container'))
+import Async from '../Async'
+import env from '../../env'
+const Submit = Async(() => import('../template/Submit'))
+const Popup = Async(() => import('../template/Popup'))
+const Input = Async(() => import('../template/Input'))
+const Title = Async(() => import('../template/Title'))
+const Lead = Async(() => import('../template/Lead'))
+const Container = Async(() => import('../template/Container'))
 
 class SetRate extends Component {
   constructor() {

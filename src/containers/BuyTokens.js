@@ -2,18 +2,18 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
 
-import Async from 'components/Async'
-import Meta from 'components/Meta'
-import env from 'env'
-import { icoMap } from 'utils/maps'
-const Submit = Async(() => import('components/template/Submit'))
-const Popup = Async(() => import('components/template/Popup'))
-const Input = Async(() => import('components/template/Input'))
-const Title = Async(() => import('components/template/Title'))
-const Lead = Async(() => import('components/template/Lead'))
-const Container = Async(() => import('components/template/Container'))
-const Ls = Async(() => import('components/template/Ls'))
-const P = Async(() => import('components/template/P'))
+import Async from '../components/Async'
+import Meta from '../components/Meta'
+import env from '../env'
+import { icoMap } from '../utils/maps'
+const Submit = Async(() => import('../components/template/Submit'))
+const Popup = Async(() => import('../components/template/Popup'))
+const Input = Async(() => import('../components/template/Input'))
+const Title = Async(() => import('../components/template/Title'))
+const Lead = Async(() => import('../components/template/Lead'))
+const Container = Async(() => import('../components/template/Container'))
+const Ls = Async(() => import('../components/template/Ls'))
+const P = Async(() => import('../components/template/P'))
 
 class BuyIcoTokens extends PureComponent {
   constructor(props) {

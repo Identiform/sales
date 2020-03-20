@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import Async from 'components/Async'
-import env from 'env'
-const Submit = Async(() => import('components/template/Submit'))
-const Popup = Async(() => import('components/template/Popup'))
-const Title = Async(() => import('components/template/Title'))
-const Container = Async(() => import('components/template/Container'))
-const SelectInput = Async(() => import('components/template/SelectInput'))
+import Async from '../Async'
+import env from '../../env'
+const Submit = Async(() => import('../template/Submit'))
+const Popup = Async(() => import('../template/Popup'))
+const Title = Async(() => import('../template/Title'))
+const Container = Async(() => import('../template/Container'))
+const SelectInput = Async(() => import('../template/SelectInput'))
 
 class ManageICO extends Component {
   constructor(props) {

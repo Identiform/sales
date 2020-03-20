@@ -3,27 +3,27 @@ import { connect } from 'react-redux'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import ReactGA from 'react-ga'
 
-import * as actions from 'actions'
-import Async from 'components/Async'
-import env from 'env'
+import * as actions from '../actions'
+import Async from './Async'
+import env from '../env'
 ReactGA.initialize(env.GA)
 const supportsHistory = 'pushState' in window.history
-const Home = Async(() => import('containers/Home'))
-const Header = Async(() => import('components/Header'))
-const Footer = Async(() => import('components/Footer'))
-const MarketInfo = Async(() => import('containers/MarketInfo'))
-const TransferTokens = Async(() => import('containers/TransferTokens'))
-const BuyTokens = Async(() => import('containers/BuyTokens'))
-const Status = Async(() => import('components/Status'))
-const RemoveFromWhitelist = Async(() => import('components/admin/RemoveFromWhitelist'))
-const AddToWhitelist = Async(() => import('components/admin/AddToWhitelist'))
-const Admin = Async(() => import('components/admin/Admin'))
-const TransferOwnership = Async(() => import('components/admin/TransferOwnership'))
-const SetParams = Async(() => import('components/admin/SetParams'))
-const ManageICO = Async(() => import('components/admin/ManageICO'))
-const SetRate = Async(() => import('components/admin/SetRate'))
-const Wrapper = Async(() => import('components/template/Wrapper'))
-const Container = Async(() => import('components/template/Container'))
+const Home = Async(() => import('../containers/Home'))
+const Header = Async(() => import('./Header'))
+const Footer = Async(() => import('./Footer'))
+const MarketInfo = Async(() => import('../containers/MarketInfo'))
+const TransferTokens = Async(() => import('../containers/TransferTokens'))
+const BuyTokens = Async(() => import('../containers/BuyTokens'))
+const Status = Async(() => import('./Status'))
+const RemoveFromWhitelist = Async(() => import('./admin/RemoveFromWhitelist'))
+const AddToWhitelist = Async(() => import('./admin/AddToWhitelist'))
+const Admin = Async(() => import('./admin/Admin'))
+const TransferOwnership = Async(() => import('./admin/TransferOwnership'))
+const SetParams = Async(() => import('./admin/SetParams'))
+const ManageICO = Async(() => import('./admin/ManageICO'))
+const SetRate = Async(() => import('./admin/SetRate'))
+const Wrapper = Async(() => import('./template/Wrapper'))
+const Container = Async(() => import('./template/Container'))
 
 class dApp extends PureComponent {
   constructor(props) {
@@ -46,13 +46,6 @@ class dApp extends PureComponent {
       this.props.fetchAccount(this.props.web3)
       this.props.fetchGasPrice(this.props.web3)
     }, 2000)
-    if (process.env.NODE_ENV === 'production') {
-      if (!window.GA_INITIALIZED) {
-        this.initGA()
-        window.GA_INITIALIZED = true
-      }
-      this.logPageView()
-    }
   }
 
   componentWillReceiveProps = (nextProps) => {
@@ -72,22 +65,15 @@ class dApp extends PureComponent {
     }
   }
 
-  initGA () {
-    ReactGA.initialize(process.env.GA)
-    // console.log('Initialized')
-  }
-
-  logPageView () {
-    ReactGA.set({ page: window.location.pathname })
-    ReactGA.pageview(window.location.pathname)
-    // console.log(`Logged: ${window.location.pathname}`)
+  pageviewTracking = () => {
+    ReactGA.pageview(window.location.pathName)
   }
 
   render() {
     return (
       <Wrapper>
         <div>
-          <BrowserRouter forceRefresh={!supportsHistory}>
+          <BrowserRouter onUpdate={this.pageviewTracking} forceRefresh={!supportsHistory}>
             <div>
               <Container>
                 <Status

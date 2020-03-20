@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import _ from 'lodash'
 
-import Async from 'components/Async'
-import env from 'env'
-const Title = Async(() => import('components/template/Title'))
-const Lead = Async(() => import('components/template/Lead'))
-const Data = Async(() => import('components/template/Data'))
-const DataRow = Async(() => import('components/template/DataRow'))
+import Async from '../Async'
+import env from '../../env'
+const Title = Async(() => import('../template/Title'))
+const Lead = Async(() => import('../template/Lead'))
+const Data = Async(() => import('../template/Data'))
+const DataRow = Async(() => import('../template/DataRow'))
 
 class RecentTransactions extends Component {
   constructor(props) {

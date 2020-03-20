@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Async from 'components/Async'
-const Container = Async(() => import('components/template/Container'))
-const P = Async(() => import('components/template/P'))
+import Async from './Async'
+const Container = Async(() => import('./template/Container'))
+const P = Async(() => import('./template/P'))
 
 const Footer = () => (
   <Container>
