@@ -12,7 +12,7 @@
     "url": "https://github.com/Identiform/token_sale_starter/issues"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "compression": "^1.7.3",
     "cross-env": "^5.2.0",
     "crypto": "^1.0.1",
